@@ -1,0 +1,34 @@
+{
+  "name": "solidity-signature-verifier",
+  "version": "0.0.0",
+  "description": "An example Solidity contract demonstrating on-chain verification of off-chain signatures.",
+  "scripts": {
+    "test": "hardhat test",
+    "console": "hardhat console",
+    "prettier": "prettier --write .",
+    "prepare": "husky install"
+  },
+  "keywords": [
+    "ethereum",
+    "solidity",
+    "smart contract"
+  ],
+  "author": "Gerald Nash (https://aunyks.com) <me@aunyks.com> |aunyks.eth|",
+  "license": "GPLv3",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.3.0"
+  },
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.2",
+    "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "@nomiclabs/hardhat-web3": "^2.0.0",
+    "chai": "^4.3.4",
+    "dotenv": "^10.0.0",
+    "ethereum-waffle": "^3.4.0",
+    "ethers": "^5.4.5",
+    "hardhat": "^2.6.1",
+    "husky": "^7.0.1",
+    "prettier": "^2.3.2",
+    "web3": "^1.5.2"
+  }
+}
