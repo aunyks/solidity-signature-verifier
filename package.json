@@ -1,7 +1,7 @@
 {
-  "name": "solidity-signature-verifier",
+  "name": "solidity-signature-verifiers",
   "version": "0.0.0",
-  "description": "An example Solidity contract demonstrating on-chain verification of off-chain signatures.",
+  "description": "Some example Solidity contracts demonstrating on-chain verification of off-chain signatures.",
   "scripts": {
     "test": "hardhat test",
     "console": "hardhat console",
@@ -28,7 +28,20 @@
     "ethers": "^5.4.5",
     "hardhat": "^2.6.1",
     "husky": "^7.0.1",
-    "prettier": "^2.3.2",
-    "web3": "^1.5.2"
+    "prettier": "^2.3.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run prettier"
+    }
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "arrowParens": "avoid",
+    "semi": false,
+    "singleQuote": true,
+    "quoteProps": "as-needed",
+    "bracketSpacing": true
   }
 }

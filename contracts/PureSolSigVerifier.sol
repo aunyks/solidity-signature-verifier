@@ -1,4 +1,7 @@
-contract SignatureVerifier {
+//SPDX-License-Identifier: GPL-3.0-or-later
+pragma solidity ^0.8.4;
+
+contract PureSolSigVerifier {
   function verify(
     address _signer,
     address _to,
@@ -6,14 +9,14 @@ contract SignatureVerifier {
     string memory _message,
     uint256 _nonce,
     bytes memory signature
-  ) public pure returns (bool) {
+  ) public pure {
     bytes32 messageHash = keccak256(
       abi.encodePacked(_to, _amount, _message, _nonce)
     );
     bytes32 ethSignedMessageHash = keccak256(
       abi.encodePacked('\x19Ethereum Signed Message:\n32', messageHash)
     );
-    return recoverSigner(ethSignedMessageHash, signature) == _signer;
+    require(recoverSigner(ethSignedMessageHash, signature) == _signer);
   }
 
   function recoverSigner(bytes32 _ethSignedMessageHash, bytes memory _signature)
@@ -34,7 +37,7 @@ contract SignatureVerifier {
       uint8 v
     )
   {
-    require(sig.length == 65, 'SignatureVerifier: Invalid signature length');
+    require(sig.length == 65, 'PureSolSigVerifier: Invalid signature length');
     assembly {
       r := mload(add(sig, 32))
       s := mload(add(sig, 64))

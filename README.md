@@ -1,12 +1,14 @@
-# Signature Verifier
+# Signature Verifiers
 
-An example Solidity contract demonstrating on-chain verification of off-chain signatures.
+Some example Solidity contracts demonstrating on-chain verification of off-chain signatures. One contract is for pure-Solidity verification, and the other uses OpenZeppelin's [`ECDSA`](https://docs.openzeppelin.com/contracts/2.x/api/cryptography#ECDSA) library.  
 
-*Be mindful of the license.*  
+Doing signature verification on-chain is tricky. These contracts and their associated unit tests document how they can safely be done.
+
+_Be mindful of the license._
 
 ### LICENSE
 
-Signature Verifier
+Signature Verifiers
 Copyright (C) 2021 Gerald Nash
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
