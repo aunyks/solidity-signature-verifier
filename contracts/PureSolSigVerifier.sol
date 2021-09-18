@@ -16,7 +16,10 @@ contract PureSolSigVerifier {
     bytes32 ethSignedMessageHash = keccak256(
       abi.encodePacked('\x19Ethereum Signed Message:\n32', messageHash)
     );
-    require(recoverSigner(ethSignedMessageHash, signature) == _signer);
+    require(
+      recoverSigner(ethSignedMessageHash, signature) == _signer,
+      'Invalid signature'
+    );
   }
 
   function recoverSigner(bytes32 _ethSignedMessageHash, bytes memory _signature)

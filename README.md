@@ -1,6 +1,6 @@
 # Signature Verifiers
 
-Some example Solidity contracts demonstrating on-chain verification of off-chain signatures. One contract is for pure-Solidity verification, and the other uses OpenZeppelin's [`ECDSA`](https://docs.openzeppelin.com/contracts/2.x/api/cryptography#ECDSA) library.  
+Some example Solidity contracts demonstrating on-chain verification of off-chain signatures. One contract is for pure-Solidity verification, and the other uses OpenZeppelin's [`ECDSA`](https://docs.openzeppelin.com/contracts/2.x/api/cryptography#ECDSA) library.
 
 Doing signature verification on-chain is tricky. These contracts and their associated unit tests document how they can safely be done.
 

@@ -68,7 +68,7 @@ describe('Pure Solidity Signature Verifier', () => {
         nonce + 1,
         ethers.utils.arrayify(signature)
       )
-    ).to.be.reverted
+    ).to.be.revertedWith('Invalid signature')
   })
 
   it('fails when a non-signer claims to be the message signer', async () => {
@@ -95,6 +95,6 @@ describe('Pure Solidity Signature Verifier', () => {
         nonce,
         ethers.utils.arrayify(signature)
       )
-    ).to.be.reverted
+    ).to.be.revertedWith('Invalid signature')
   })
 })

@@ -13,11 +13,12 @@ contract OZSigVerifier {
     string memory _message,
     uint256 _nonce,
     bytes memory signature
-  ) public {
+  ) public pure {
     require(
       keccak256(abi.encodePacked(_to, _amount, _message, _nonce))
         .toEthSignedMessageHash()
-        .recover(signature) == _signer
+        .recover(signature) == _signer,
+      'Invalid signature'
     );
   }
 }

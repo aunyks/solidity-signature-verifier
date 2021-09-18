@@ -10,9 +10,7 @@ describe('OpenZeppelin ECDSA Signature Verifier', () => {
 
   beforeEach(async () => {
     ;[deployerAccount, receiverAccount] = await ethers.getSigners()
-    const OZSigVerifier = await ethers.getContractFactory(
-      'OZSigVerifier'
-    )
+    const OZSigVerifier = await ethers.getContractFactory('OZSigVerifier')
     sigVerifier = await OZSigVerifier.deploy()
     await sigVerifier.deployed()
   })
@@ -68,7 +66,7 @@ describe('OpenZeppelin ECDSA Signature Verifier', () => {
         nonce + 1,
         ethers.utils.arrayify(signature)
       )
-    ).to.be.reverted
+    ).to.be.revertedWith('Invalid signature')
   })
 
   it('fails when a non-signer claims to be the message signer', async () => {
@@ -95,6 +93,6 @@ describe('OpenZeppelin ECDSA Signature Verifier', () => {
         nonce,
         ethers.utils.arrayify(signature)
       )
-    ).to.be.reverted
+    ).to.be.revertedWith('Invalid signature')
   })
 })
